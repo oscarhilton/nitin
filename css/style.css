@@ -25,7 +25,7 @@ h5 {
     font-size: 1.5em; } }
 
 h2 {
-  color: #a98282; }
+  color: #fac1c1; }
   @media (min-width: 1500px), (min-width: 1020px) and (max-width: 1499px) {
     h2 {
       font-size: 1.2em; } }
@@ -36,7 +36,7 @@ h2 {
 h3,
 h4,
 h5 {
-  color: #a98282; }
+  color: #fac1c1; }
   @media (min-width: 1500px), (min-width: 1020px) and (max-width: 1499px) {
     h3,
     h4,
@@ -360,17 +360,23 @@ header.header {
   border-radius: 50%;
   display: inline;
   font-size: 14px;
-  transition: background 0.1s; }
+  transition: background 0.1s;
+  opacity: 1;
+  transition: opacity 0.5s; }
   .play-btn svg {
-    fill: white;
+    fill: #fac1c1;
     width: 20px;
     padding: 10px 8px; }
   .play-btn:hover {
-    background: #a98282;
+    background: #fac1c1;
     cursor: pointer; }
+    .play-btn:hover svg {
+      fill: black; }
 
 .hero-section {
   position: relative; }
+  .hero-section.play .play-btn {
+    opacity: 0; }
   .hero-section .play-btn {
     position: absolute;
     bottom: 0;
@@ -397,3 +403,12 @@ header.header {
     @media (min-width: 375px) and (max-width: 667px), (min-width: 0px) and (max-width: 374px), (min-width: 668px) and (max-width: 1023px) {
       .single-video-bottom-content .single-video-content {
         padding: 10px; } }
+
+.post-type-page {
+  max-width: 500px; }
+  @media (min-width: 1500px), (min-width: 1020px) and (max-width: 1499px) {
+    .post-type-page {
+      padding: 20px; } }
+  @media (min-width: 375px) and (max-width: 667px), (min-width: 0px) and (max-width: 374px), (min-width: 668px) and (max-width: 1023px) {
+    .post-type-page {
+      padding: 10px; } }

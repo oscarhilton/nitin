@@ -29,7 +29,7 @@ h1{
 }
 
 h2{
-  color: #a98282;
+  color: $second;
   @media #{$big-desktop}, #{$desktop}{
     font-size: 1.2em;
   }
@@ -41,7 +41,7 @@ h2{
 h3,
 h4,
 h5{
-  color: #a98282;
+  color: $second;
   @media #{$big-desktop}, #{$desktop}{
     font-size: 1.1em;
   }

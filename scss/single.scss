@@ -1,0 +1,9 @@
+.post-type-page{
+  max-width: 500px;
+  @media #{$big-desktop}, #{$desktop}{
+    padding: 20px;
+  }
+  @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+    padding: 10px;
+  }
+}

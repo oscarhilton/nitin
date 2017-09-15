@@ -6,19 +6,29 @@
   display: inline;
   font-size: 14px;
   transition: background 0.1s;
+  opacity: 1;
+  transition: opacity 0.5s;
   svg{
-    fill: white;
+    fill: #fac1c1;
     width: 20px;
     padding: 10px 8px;
   }
   &:hover{
-    background: #a98282;
+    background: $second;
     cursor: pointer;
+    svg{
+      fill: black;
+    }
   }
 }
 
 .hero-section{
   position: relative;
+  &.play{
+    .play-btn{
+      opacity: 0;
+    }
+  }
   .play-btn{
     position: absolute;
     bottom: 0;

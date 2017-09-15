@@ -16,7 +16,6 @@ jQuery( document ).ready( function( $ ) {
       'transform': 'translateY(' + percent * scroll + 'px)'
     });
     $header.css('background', 'rgba(16, 17, 19,' + (scroll / height) +')');
-    $('.play-btn').css('opacity', percent);
     console.log(percent);
   });
 
