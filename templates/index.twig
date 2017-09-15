@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div id="fullpage">
+	<div class="section video-section">
+		<div class="background">
+			<img src="http://suplugins.com/podium/images/placeholder-05.jpg" />
+			<iframe src="https://player.vimeo.com/video/154581851?background=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+	</div>
+	{% for slide in function('get_field', 'repeater', 'options') %}
+			{% for section in slide.section %}
+				<div class="section">
+					{% if section.acf_fc_layout == 'post' %}
+						<div class="title-container">
+							<h2>
+								<a href="{{function('get_the_permalink', section.post.ID)}}">
+									{{section.post.post_title}}
+								</a>
+							</h2>
+						</div>
+						<div class="background">
+							{{ function( 'get_the_post_thumbnail', section.post.ID ) }}
+						</div>
+					{% elseif section.acf_fc_layout == 'category' %}
+						<div class="title-container">
+							<h2>
+								<a href="{{function('get_category_link', section.category[0])}}">
+							{{	function('get_cat_name', section.category[0])}}
+								</a>
+							</h2>
+						</div>
+					{% else %}
+						<h2>Bla</h2>
+					{% endif %}
+				</div>
+			{% endfor %}
+	{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+{% set embed = post.get_field('video_embed_link') %}
+<div class="hero-section">
+    <div class="background">
+      {% if post.thumbnail %}
+        <img src="{{post.thumbnail.src}}" />
+      {% elseif thumb %}
+        <img src="{{thumb}}" />
+      {% endif %}
+    </div>
+  {{post.get_field('video_embed_link')}}
+  <h1>{{post.title}}</h1>
+  <div class="play-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve" style="&#10;    stroke-width: 1px;&#10;">
+    <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+    <g><path d="M75.7,990V10l848.7,490L75.7,990L75.7,990z M137.6,117.3v765.3L800.4,500L137.6,117.3L137.6,117.3z"/></g>
+    </svg>
+  </div>
+</div>
+<div class="single-video-bottom-content">
+  <div class="single-video-content">
+    {{post.content}}
+  </div>
+</div>
+<div class="contact-details">
+  <div class="block-title">
+    <h2>Contact</h2>
+  </div>
+  <ul>
+    <li>488329-478927489</li>
+    <li>email@email.co.uk</li>
+  </ul>
+</div>
+{% endblock %}

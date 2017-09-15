@@ -1,0 +1,59 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="hero-section">
+  <h1>{{post.title}}</h1>
+  <div class="background">
+    <img src="{{post.thumbnail.src}}" />
+  </div>
+</div>
+{% if categories %}
+  <div class="categories">
+    {% for category in categories %}
+      <div class="category category-{{category.name}}">
+        <div class="block-title">
+          <h2>{{category.name}}</h2>
+        </div>
+        <div class="videos">
+          {% for video in category.get_posts %}
+            <div class="video">
+              <div class="video-title split">
+                <h3>
+                  <a href="{{video.link}}">{{video.title}}</a>
+                </h3>
+                {{video.content}}
+              </div>
+              <div class="video-thumb split">
+                <a href="{{video.link}}">
+                  <img src="{{video.thumbnail.src}}" />
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+<div class="videos">
+  {% for video in posts %}
+    <div class="video">
+      <div class="video-title split">
+        <h3>
+          <a href="{{video.link}}">
+            {{video.title}}
+          </a>
+        </h3>
+        {{video.content}}
+      </div>
+      <div class="video-thumb split">
+        <a href="{{video.link}}">
+          <img src="{{video.thumbnail.src}}" />
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

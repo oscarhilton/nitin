@@ -1,0 +1,15 @@
+<div class="videos">
+  {% for video in posts %}
+    <div class="video">
+      <div class="video-title split">
+        <a href="{{video.link}}">{{video.title}}</a>
+        {{video.content}}
+      </div>
+      <div class="video-thumb split">
+        <a href="{{video.link}}">
+          <img src="{{video.thumbnail.src}}" />
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>

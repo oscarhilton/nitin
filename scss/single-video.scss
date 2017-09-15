@@ -1,0 +1,52 @@
+.play-btn{
+  padding: 30px 35px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  display: inline;
+  font-size: 14px;
+  transition: background 0.1s;
+  svg{
+    fill: white;
+    width: 20px;
+    padding: 10px 8px;
+  }
+  &:hover{
+    background: #a98282;
+    cursor: pointer;
+  }
+}
+
+.hero-section{
+  position: relative;
+  .play-btn{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 30px;
+    height: 40px;
+    @media #{$big-desktop}, #{$desktop}{
+      left: 20px;
+    }
+    @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+      left: 10px;
+    }
+  }
+}
+
+.single-video-bottom-content{
+  background: $grey;
+  p{
+    max-width: 350px;
+  }
+  .single-video-content{
+    clear: both;
+    @media #{$big-desktop}, #{$desktop}{
+      padding: 20px;
+    }
+    @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+      padding: 10px;
+    }
+  }
+}

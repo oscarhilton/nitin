@@ -1,0 +1,40 @@
+.burger-icon{
+  width: 25px;
+  position: absolute;
+  top:18px;
+  right: 15px;
+  height: calc(100% - 35px);
+  z-index: 99;
+  span{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: white;
+    transition: top 0.08s, bottom 0.1s;
+    &:first-child{
+      top:0;
+    }
+    &:nth-child(2){
+      top: calc(50% - 1px);
+    }
+    &:last-child{
+      bottom: 0;
+    }
+  }
+}
+
+.menu-open{
+  .burger-icon{
+    span{
+      &:first-child{
+        top: calc(50% - 1px);
+      }
+      &:nth-child(2){
+        top: calc(50% - 1px);
+      }
+      &:last-child{
+        top: calc(50% - 1px);
+      }
+    }
+  }
+}

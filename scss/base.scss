@@ -1,0 +1,149 @@
+#wpadminbar{
+  display: none;
+}
+body{
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: #cccccc;
+  font-family: 'Dosis', sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5{
+  font-family: 'Mandali', sans-serif;
+}
+
+h1{
+  @media #{$big-desktop}, #{$desktop}{
+    font-size: 2em;
+  }
+  @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+    font-size: 1.5em;
+  }
+}
+
+h2{
+  color: #a98282;
+  @media #{$big-desktop}, #{$desktop}{
+    font-size: 1.2em;
+  }
+  @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+    font-size: 1em;
+  }
+}
+
+h3,
+h4,
+h5{
+  color: #a98282;
+  @media #{$big-desktop}, #{$desktop}{
+    font-size: 1.1em;
+  }
+  @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+    font-size: 0.9em;
+  }
+}
+
+p,
+span,
+i{
+  @media #{$big-desktop}, #{$desktop}{
+    font-size: 1em;
+  }
+  @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+    font-size: 0.7em;
+  }
+}
+
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.pull-right{
+  float: right;
+}
+
+.block-title{
+  width: calc(100% - 40px);
+  color: white;
+  background: $grey;
+  border-top: solid thin rgba(255,255,255,0.1);
+  border-bottom: solid thin rgba(0,0,0,0.4);
+  h2{
+    margin: 0;
+  }
+  @media #{$big-desktop}, #{$desktop}{
+    padding: 20px;
+  }
+  @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+    padding: 20px 10px;
+  }
+}
+
+.hero-section{
+  width: 100%;
+  position: relative;
+  @media #{$big-desktop}, #{$desktop}{
+    height: 80vh;
+  }
+  @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+    height: calc(100vh - 60px);
+  }
+  &.play{
+    iframe{
+      opacity: 1;
+      pointer-events: all;
+    }
+    .background{
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  h1,
+  h2{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    line-height: 1.1em;
+    width: calc(100% - 40px);
+    @media #{$big-desktop}, #{$desktop}{
+      padding: 20px;
+    }
+    @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
+      padding: 20px 10px;
+    }
+  }
+  iframe{
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+  }
+  iframe,
+  .background{
+    transition: transform 0.1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .background{
+    z-index: -1;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
