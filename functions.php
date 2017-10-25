@@ -135,6 +135,74 @@ class StarterSite extends TimberSite {
 			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
 		);
 		register_post_type( 'journalism', $args );
+		$labels = array(
+			'name'               => _x( 'Branded', 'post type general name', 'your-plugin-textdomain' ),
+			'singular_name'      => _x( 'Branded', 'post type singular name', 'your-plugin-textdomain' ),
+			'menu_name'          => _x( 'Branded', 'admin menu', 'your-plugin-textdomain' ),
+			'name_admin_bar'     => _x( 'Branded', 'add new on admin bar', 'your-plugin-textdomain' ),
+			'add_new'            => _x( 'Add Branded', 'book', 'your-plugin-textdomain' ),
+			'add_new_item'       => __( 'Add New Branded', 'your-plugin-textdomain' ),
+			'new_item'           => __( 'New Branded', 'your-plugin-textdomain' ),
+			'edit_item'          => __( 'Edit Branded', 'your-plugin-textdomain' ),
+			'view_item'          => __( 'View Branded', 'your-plugin-textdomain' ),
+			'all_items'          => __( 'All Branded', 'your-plugin-textdomain' ),
+			'search_items'       => __( 'Search Branded', 'your-plugin-textdomain' ),
+			'parent_item_colon'  => __( 'Parent Branded:', 'your-plugin-textdomain' ),
+			'not_found'          => __( 'No Branded found.', 'your-plugin-textdomain' ),
+			'not_found_in_trash' => __( 'No Branded found in Trash.', 'your-plugin-textdomain' )
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'menu_icon' 				 => 'dashicons-video-alt',
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'branded' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => null,
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+		);
+		register_post_type( 'branded', $args );
+		$labels = array(
+			'name'               => _x( 'Film', 'post type general name', 'your-plugin-textdomain' ),
+			'singular_name'      => _x( 'Film', 'post type singular name', 'your-plugin-textdomain' ),
+			'menu_name'          => _x( 'Film', 'admin menu', 'your-plugin-textdomain' ),
+			'name_admin_bar'     => _x( 'Film', 'add new on admin bar', 'your-plugin-textdomain' ),
+			'add_new'            => _x( 'Add Film', 'book', 'your-plugin-textdomain' ),
+			'add_new_item'       => __( 'Add New Film', 'your-plugin-textdomain' ),
+			'new_item'           => __( 'New Film', 'your-plugin-textdomain' ),
+			'edit_item'          => __( 'Edit Film', 'your-plugin-textdomain' ),
+			'view_item'          => __( 'View Film', 'your-plugin-textdomain' ),
+			'all_items'          => __( 'All Film', 'your-plugin-textdomain' ),
+			'search_items'       => __( 'Search Film', 'your-plugin-textdomain' ),
+			'parent_item_colon'  => __( 'Parent Film:', 'your-plugin-textdomain' ),
+			'not_found'          => __( 'No Film found.', 'your-plugin-textdomain' ),
+			'not_found_in_trash' => __( 'No Film found in Trash.', 'your-plugin-textdomain' )
+		);
+
+		$args = array(
+			'labels'             => $labels,
+			'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'menu_icon' 				 => 'dashicons-video-alt',
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'film' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => null,
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+		);
+		register_post_type( 'film', $args );
 	}
 
 	function register_taxonomies() {
@@ -180,10 +248,38 @@ class StarterSite extends TimberSite {
             'hierarchical' => true
         )
     );
+		register_taxonomy(
+        'branded-categories',
+        array('branded'),
+        array(
+            'labels' => array(
+                'name' => 'Categoies',
+                'add_new_item' => 'Add New Categoies',
+                'new_item_name' => "New Category"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true
+        )
+    );
+		register_taxonomy(
+        'film-categories',
+        array('film'),
+        array(
+            'labels' => array(
+                'name' => 'Categoies',
+                'add_new_item' => 'Add New Categoies',
+                'new_item_name' => "New Category"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true
+        )
+    );
 	}
 
 	function loadScripts() {
-				wp_enqueue_script('jquery');
+				wp_enqueue_script( 'jquery');
 				wp_register_script( 'site', get_template_directory_uri() . '/static/site.js', array(), '1.0.0', true );
 				wp_enqueue_script( 'site');
 				wp_register_script( 'fullPage', get_template_directory_uri() . '/static/jquery.fullpage.min.js', array(), '1.0.0', true );
@@ -193,6 +289,7 @@ class StarterSite extends TimberSite {
 	function add_to_context( $context ) {
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
+		$context['options'] = get_fields('options');
 		return $context;
 	}
 

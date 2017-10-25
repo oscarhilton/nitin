@@ -1,3 +1,9 @@
+.page-template-default{
+  header.header{
+    background: black;
+  }
+}
+
 header.header{
   position: fixed;
   top: 0;
@@ -12,10 +18,10 @@ header.header{
   }
   .hdr-logo{
     @media #{$big-desktop}, #{$desktop}{
-      width: 150px;
+      width: 215px;
     }
     @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
-      width: 120px;
+      width: 150px;
     }
     img{
       width: 100%;
@@ -48,7 +54,7 @@ header.header{
       font-family: 'Mandali', sans-serif;
       line-height: 2em;
       a{
-        color: #a98282;
+        color: $second;
         width: 100%;
         display: block;
         padding-left: 20px;
@@ -56,7 +62,7 @@ header.header{
         transition: border 0.2s;
         &:hover{
           color: white;
-          border-bottom: solid thin #a98282;
+          border-bottom: solid thin $second;
         }
       }
       @media #{$big-desktop}, #{$desktop}{

@@ -2,8 +2,17 @@
   <div class="block-title">
     <h2>Contact</h2>
   </div>
-  <ul>
-    <li>488329-478927489</li>
-    <li>email@email.co.uk</li>
-  </ul>
+  <div class="contact-details">
+    <ul>
+      <li><a>Tel: 488329-478927489</a></li>
+      <li><a>Email: email@email.co.uk</a></li>
+    </ul>
+  </div>
+  <div class="social-icons">
+    <ul>
+      {% for social in options.social_media %}
+        <li><a href="{{social.social_link}}">icon</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

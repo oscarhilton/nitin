@@ -4,8 +4,8 @@
 <div id="fullpage">
 	<div class="section video-section">
 		<div class="background">
-			<img src="http://suplugins.com/podium/images/placeholder-05.jpg" />
-			<iframe src="https://player.vimeo.com/video/154581851?background=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<img src="{{options.mobile_landing_image}}" />
+			<iframe src="{{options.homepage_showreel}}?loop=1&background=1" width="500" height="281" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 		</div>
 	</div>
 	{% for slide in function('get_field', 'repeater', 'options') %}
@@ -26,12 +26,10 @@
 						<div class="title-container">
 							<h2>
 								<a href="{{function('get_category_link', section.category[0])}}">
-							{{	function('get_cat_name', section.category[0])}}
+									{{function('get_cat_name', section.category[0])}}
 								</a>
 							</h2>
 						</div>
-					{% else %}
-						<h2>Bla</h2>
 					{% endif %}
 				</div>
 			{% endfor %}

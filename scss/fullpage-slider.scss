@@ -7,7 +7,7 @@
     transition: transform 0.4s, opacity 0.5s;
     height: 100%;
     color: white;
-    padding-left: 5%;
+    padding-left: 8%;
     &.video-section{
       @media #{$big-desktop}, #{$desktop}, #{$tablet} {
         img{
@@ -43,7 +43,7 @@
         position: relative;
         overflow: hidden;
         @media #{$big-desktop}, #{$desktop}{
-          height: 60px;
+          height: 80px;
         }
         @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
           height: 45px;
@@ -57,10 +57,10 @@
           transition: transform 0.5s 0.4s, opacity 0.5s 0.4s;
           transform: translateY(100%);
           @media #{$big-desktop}, #{$desktop}{
-            font-size: 2em;
+            font-size: 3.5em;
           }
           @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
-            font-size: 1.5em;
+            font-size: 2em;
           }
         }
       }

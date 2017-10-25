@@ -1,9 +1,29 @@
+.content-wrapper {
+  position: relative;
+}
+
 .post-type-page{
   max-width: 500px;
+  width: 45%;
+  padding-right: 5%;
   @media #{$big-desktop}, #{$desktop}{
     padding: 20px;
   }
   @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
     padding: 10px;
+  }
+}
+
+.post-side-images{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  .image{
+    height: 50%;
+    width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
   }
 }

@@ -1,4 +1,4 @@
-.play-btn{
+.circle-btn{
   padding: 30px 35px;
   color: white;
   background: rgba(0,0,0,0.6);
@@ -11,7 +11,7 @@
   svg{
     fill: #fac1c1;
     width: 20px;
-    padding: 10px 8px;
+    padding: 10px 6px;
   }
   &:hover{
     background: $second;
@@ -29,7 +29,7 @@
       opacity: 0;
     }
   }
-  .play-btn{
+  .circle-btn{
     position: absolute;
     bottom: 0;
     top: 0;
@@ -59,4 +59,8 @@
       padding: 10px;
     }
   }
+}
+
+.video-credit {
+  font-style: italic
 }

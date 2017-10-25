@@ -16,25 +16,27 @@ h2,
 h3,
 h4,
 h5{
-  font-family: 'Mandali', sans-serif;
+  font-family: 'Palanquin', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.02em;
 }
 
 h1{
   @media #{$big-desktop}, #{$desktop}{
-    font-size: 2em;
+    font-size: 2.8em;
   }
   @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }
 
 h2{
   color: $second;
   @media #{$big-desktop}, #{$desktop}{
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
   @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 
@@ -46,7 +48,7 @@ h5{
     font-size: 1.1em;
   }
   @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
-    font-size: 0.9em;
+    font-size: 1.1em;
   }
 }
 
@@ -54,11 +56,15 @@ p,
 span,
 i{
   @media #{$big-desktop}, #{$desktop}{
-    font-size: 1em;
+    font-size: 1.2em;
   }
   @media #{$mobile}, #{$xs-mobile}, #{$tablet} {
-    font-size: 0.7em;
+    font-size: 0.8em;
   }
+}
+
+.article-h1{
+  color: $second;
 }
 
 
